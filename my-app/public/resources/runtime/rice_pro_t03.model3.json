@@ -1,0 +1,56 @@
+{
+  "Version": 3,
+  "FileReferences": {
+    "Moc": "rice_pro_t03.moc3",
+    "Textures": [
+      "rice_pro_t03.2048/texture_00.png",
+      "rice_pro_t03.2048/texture_01.png"
+    ],
+    "Physics": "rice_pro_t03.physics3.json",
+    "DisplayInfo": "rice_pro_t03.cdi3.json",
+    "Motions": {
+      "Idle": [
+        {
+          "File": "motions/idle.motion3.json"
+        }
+      ],
+      "FlickLeft": [
+        {
+          "File": "motions/mtn_01.motion3.json"
+        }
+      ],
+      "Tap@Body": [
+        {
+          "File": "motions/mtn_02.motion3.json"
+        }
+      ],
+      "FlickUp": [
+        {
+          "File": "motions/mtn_03.motion3.json"
+        }
+      ]
+    }
+  },
+  "Groups": [
+    {
+      "Target": "Parameter",
+      "Name": "EyeBlink",
+      "Ids": ["ParamEyeLOpen", "ParamEyeROpen"]
+    },
+    {
+      "Target": "Parameter",
+      "Name": "LipSync",
+      "Ids": []
+    }
+  ],
+  "HitAreas": [
+    {
+      "Id": "HitAreaHead",
+      "Name": "head"
+    },
+    {
+      "Id": "HitAreaBody",
+      "Name": "body"
+    }
+  ]
+}
