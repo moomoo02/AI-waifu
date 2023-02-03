@@ -1,0 +1,697 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "ParamAngleX",
+			"GroupId": "ParamGroupFace",
+			"Name": "각도 X"
+		},
+		{
+			"Id": "ParamAngleZ",
+			"GroupId": "ParamGroupFace",
+			"Name": "각도 Z"
+		},
+		{
+			"Id": "ParamEyeLOpen",
+			"GroupId": "ParamGroupEyes",
+			"Name": "왼쪽 눈 개폐"
+		},
+		{
+			"Id": "ParamEyeROpen",
+			"GroupId": "ParamGroupEyes",
+			"Name": "오른쪽 눈 개폐"
+		},
+		{
+			"Id": "ParamEyeBallX",
+			"GroupId": "ParamGroupEyes",
+			"Name": "눈알 X"
+		},
+		{
+			"Id": "ParamEyeBallY",
+			"GroupId": "ParamGroupEyes",
+			"Name": "눈알 Y"
+		},
+		{
+			"Id": "ParamBodyAngleX",
+			"GroupId": "ParamGroupBody",
+			"Name": "몸의 회전 X"
+		},
+		{
+			"Id": "ParamBodyAngleY",
+			"GroupId": "ParamGroupBody",
+			"Name": "몸의 회전 Y"
+		},
+		{
+			"Id": "ParamBodyAngleZ",
+			"GroupId": "ParamGroupBody",
+			"Name": "몸의 회전 Z"
+		},
+		{
+			"Id": "ParamShoulderR",
+			"GroupId": "ParamGroupBody",
+			"Name": "오른쪽 어깨"
+		},
+		{
+			"Id": "ParamShoulderL",
+			"GroupId": "ParamGroupBody",
+			"Name": "왼쪽 어깨"
+		},
+		{
+			"Id": "ParamLegKnee",
+			"GroupId": "ParamGroupBody",
+			"Name": "굴신"
+		},
+		{
+			"Id": "ParamLegR",
+			"GroupId": "ParamGroupBody",
+			"Name": "오른발의 위치"
+		},
+		{
+			"Id": "ParamLegRUpDw",
+			"GroupId": "ParamGroupBody",
+			"Name": "오른발의 위아래"
+		},
+		{
+			"Id": "ParamAllZ",
+			"GroupId": "ParamGroupBody",
+			"Name": "전체 Z"
+		},
+		{
+			"Id": "ParamArmR01",
+			"GroupId": "ParamGroupArms",
+			"Name": "오른쪽 팔뚝"
+		},
+		{
+			"Id": "ParamArmR01Y",
+			"GroupId": "ParamGroupArms",
+			"Name": "오른쪽 팔 Y"
+		},
+		{
+			"Id": "ParamArmR02",
+			"GroupId": "ParamGroupArms",
+			"Name": "오른쪽 팔뚝"
+		},
+		{
+			"Id": "ParamArmR02Y",
+			"GroupId": "ParamGroupArms",
+			"Name": "오른쪽 팔 Y"
+		},
+		{
+			"Id": "ParamArmR03",
+			"GroupId": "ParamGroupArms",
+			"Name": "오른손"
+		},
+		{
+			"Id": "ParamArmL01",
+			"GroupId": "ParamGroupArms",
+			"Name": "왼팔"
+		},
+		{
+			"Id": "ParamArmL02",
+			"GroupId": "ParamGroupArms",
+			"Name": "왼쪽 팔뚝"
+		},
+		{
+			"Id": "ParamArmL03",
+			"GroupId": "ParamGroupArms",
+			"Name": "왼손"
+		},
+		{
+			"Id": "ParamArmChange",
+			"GroupId": "ParamGroupArms",
+			"Name": "팔 전환"
+		},
+		{
+			"Id": "ParamBookPage",
+			"GroupId": "ParamGroupArms",
+			"Name": "책 페이지"
+		},
+		{
+			"Id": "ParamFlameOn",
+			"GroupId": "ParamGroupFlame",
+			"Name": "불꽃 표시"
+		},
+		{
+			"Id": "ParamFlame",
+			"GroupId": "ParamGroupFlame",
+			"Name": "불꽃"
+		},
+		{
+			"Id": "ParamFlameShaking",
+			"GroupId": "ParamGroupFlame",
+			"Name": "불꽃의 흔들림"
+		},
+		{
+			"Id": "ParamFlameX",
+			"GroupId": "ParamGroupFlame",
+			"Name": "불꽃의 위치 X"
+		},
+		{
+			"Id": "ParamFlameY",
+			"GroupId": "ParamGroupFlame",
+			"Name": "불꽃의 위치 Y"
+		},
+		{
+			"Id": "ParamCharge01On",
+			"GroupId": "ParamGroupEffectsA",
+			"Name": "고정 표시"
+		},
+		{
+			"Id": "ParamCharge01",
+			"GroupId": "ParamGroupEffectsA",
+			"Name": "모아둠"
+		},
+		{
+			"Id": "ParamHandLightAOn",
+			"GroupId": "ParamGroupEffectsA",
+			"Name": "손의 빛 A의 표시"
+		},
+		{
+			"Id": "ParamHandLightASize",
+			"GroupId": "ParamGroupEffectsA",
+			"Name": "손의 빛 A의 확축"
+		},
+		{
+			"Id": "ParamMagicPowersA",
+			"GroupId": "ParamGroupEffectsA",
+			"Name": "파동 A"
+		},
+		{
+			"Id": "ParamMagicAOn",
+			"GroupId": "ParamGroupEffectsA",
+			"Name": "마법진 A 표시"
+		},
+		{
+			"Id": "ParamMagicARotation",
+			"GroupId": "ParamGroupEffectsA",
+			"Name": "마법진 A의 회전"
+		},
+		{
+			"Id": "ParamMagicALight",
+			"GroupId": "ParamGroupEffectsA",
+			"Name": "마법진 A 빛"
+		},
+		{
+			"Id": "ParamEffectAX",
+			"GroupId": "ParamGroupEffectsA",
+			"Name": "이펙트 A의 위치 X"
+		},
+		{
+			"Id": "ParamEffectAY",
+			"GroupId": "ParamGroupEffectsA",
+			"Name": "이펙트 A의 위치 Y"
+		},
+		{
+			"Id": "ParamHandLightBOn",
+			"GroupId": "ParamGroupEffectsB",
+			"Name": "손의 빛 B의 표시"
+		},
+		{
+			"Id": "ParamHandLightBSize",
+			"GroupId": "ParamGroupEffectsB",
+			"Name": "손의 광선 B의 확장"
+		},
+		{
+			"Id": "ParamMagicBOn",
+			"GroupId": "ParamGroupEffectsB",
+			"Name": "마법진 B표시"
+		},
+		{
+			"Id": "ParamMagicBRotation",
+			"GroupId": "ParamGroupEffectsB",
+			"Name": "마법진 B의 회전"
+		},
+		{
+			"Id": "ParamMagicBMove",
+			"GroupId": "ParamGroupEffectsB",
+			"Name": "마법진 B의 이동"
+		},
+		{
+			"Id": "ParamMagicBX",
+			"GroupId": "ParamGroupEffectsB",
+			"Name": "마법진 B의 각도 X"
+		},
+		{
+			"Id": "ParamMagicPowersBOn",
+			"GroupId": "ParamGroupEffectsB",
+			"Name": "파동 B 표시"
+		},
+		{
+			"Id": "ParamMagicPowersBSize",
+			"GroupId": "ParamGroupEffectsB",
+			"Name": "파동 B의 확장"
+		},
+		{
+			"Id": "ParamMagicPowersBThicknesses",
+			"GroupId": "ParamGroupEffectsB",
+			"Name": "파동 B의 굵기"
+		},
+		{
+			"Id": "ParamEffectBX",
+			"GroupId": "ParamGroupEffectsB",
+			"Name": "이펙트B의 위치 X"
+		},
+		{
+			"Id": "ParamEffectBY",
+			"GroupId": "ParamGroupEffectsB",
+			"Name": "이펙트B의 위치 Y"
+		},
+		{
+			"Id": "ParamHeadRibbon",
+			"GroupId": "ParamGroupSwing",
+			"Name": "머리 리본의 흔들림"
+		},
+		{
+			"Id": "ParamBustRibbon01",
+			"GroupId": "ParamGroupSwing",
+			"Name": "가슴 리본의 흔들림 01"
+		},
+		{
+			"Id": "ParamBustRibbon02",
+			"GroupId": "ParamGroupSwing",
+			"Name": "가슴 리본의 흔들림 02"
+		},
+		{
+			"Id": "ParamWaistRibbon01",
+			"GroupId": "ParamGroupSwing",
+			"Name": "허리 리본의 흔들림 01"
+		},
+		{
+			"Id": "ParamWaistRibbon02",
+			"GroupId": "ParamGroupSwing",
+			"Name": "허리 리본의 흔들림 02"
+		},
+		{
+			"Id": "ParamSkirt",
+			"GroupId": "ParamGroupSwing",
+			"Name": "스커트의 나부끼기"
+		},
+		{
+			"Id": "ParamSkirtX",
+			"GroupId": "ParamGroupSwing",
+			"Name": "스커트의 흔들림 X"
+		},
+		{
+			"Id": "ParamSkirtY",
+			"GroupId": "ParamGroupSwing",
+			"Name": "스커트의 흔들림 Y"
+		},
+		{
+			"Id": "ParamHairFront01",
+			"GroupId": "ParamGroupHairFront",
+			"Name": "머리 흔들림 전01"
+		},
+		{
+			"Id": "ParamHairFront02",
+			"GroupId": "ParamGroupHairFront",
+			"Name": "머리 흔들림 앞 02"
+		},
+		{
+			"Id": "Param_Angle_Rotation_1_ArtMesh67",
+			"GroupId": "ParamGroupHairSideR",
+			"Name": "[0] 오른쪽 옆머리"
+		},
+		{
+			"Id": "Param_Angle_Rotation_2_ArtMesh67",
+			"GroupId": "ParamGroupHairSideR",
+			"Name": "[1] 오른쪽 옆머리"
+		},
+		{
+			"Id": "Param_Angle_Rotation_3_ArtMesh67",
+			"GroupId": "ParamGroupHairSideR",
+			"Name": "[2] 오른쪽 옆머리"
+		},
+		{
+			"Id": "Param_Angle_Rotation_4_ArtMesh67",
+			"GroupId": "ParamGroupHairSideR",
+			"Name": "[3] 오른쪽 옆머리"
+		},
+		{
+			"Id": "Param_Angle_Rotation_5_ArtMesh67",
+			"GroupId": "ParamGroupHairSideR",
+			"Name": "[4] 오른쪽 옆머리"
+		},
+		{
+			"Id": "Param_Angle_Rotation_1_ArtMesh20",
+			"GroupId": "ParamGroupHairSideL",
+			"Name": "[0] 왼쪽 옆머리"
+		},
+		{
+			"Id": "Param_Angle_Rotation_2_ArtMesh20",
+			"GroupId": "ParamGroupHairSideL",
+			"Name": "[1] 왼쪽 옆머리"
+		},
+		{
+			"Id": "Param_Angle_Rotation_3_ArtMesh20",
+			"GroupId": "ParamGroupHairSideL",
+			"Name": "[2] 왼쪽 옆머리"
+		},
+		{
+			"Id": "Param_Angle_Rotation_4_ArtMesh20",
+			"GroupId": "ParamGroupHairSideL",
+			"Name": "[3] 왼쪽 옆머리"
+		},
+		{
+			"Id": "Param_Angle_Rotation_5_ArtMesh20",
+			"GroupId": "ParamGroupHairSideL",
+			"Name": "[4] 왼쪽 옆머리"
+		},
+		{
+			"Id": "Param_Angle_Rotation_1_ArtMesh82",
+			"GroupId": "ParamGroupHairBackA",
+			"Name": "[0] 뒷머리 A"
+		},
+		{
+			"Id": "Param_Angle_Rotation_2_ArtMesh82",
+			"GroupId": "ParamGroupHairBackA",
+			"Name": "[1] 뒷머리 A"
+		},
+		{
+			"Id": "Param_Angle_Rotation_3_ArtMesh82",
+			"GroupId": "ParamGroupHairBackA",
+			"Name": "[2] 뒷머리 A"
+		},
+		{
+			"Id": "Param_Angle_Rotation_4_ArtMesh82",
+			"GroupId": "ParamGroupHairBackA",
+			"Name": "[3] 뒷머리 A"
+		},
+		{
+			"Id": "Param_Angle_Rotation_5_ArtMesh82",
+			"GroupId": "ParamGroupHairBackA",
+			"Name": "[4] 뒷머리 A"
+		},
+		{
+			"Id": "Param_Angle_Rotation_6_ArtMesh82",
+			"GroupId": "ParamGroupHairBackA",
+			"Name": "[5] 뒷머리 A"
+		},
+		{
+			"Id": "Param_Angle_Rotation_7_ArtMesh82",
+			"GroupId": "ParamGroupHairBackA",
+			"Name": "[6] 뒷머리 A"
+		},
+		{
+			"Id": "Param_Angle_Rotation_1_ArtMesh81",
+			"GroupId": "ParamGroupHairBackB",
+			"Name": "[0] 뒷머리 B"
+		},
+		{
+			"Id": "Param_Angle_Rotation_2_ArtMesh81",
+			"GroupId": "ParamGroupHairBackB",
+			"Name": "[1] 뒷머리 B"
+		},
+		{
+			"Id": "Param_Angle_Rotation_3_ArtMesh81",
+			"GroupId": "ParamGroupHairBackB",
+			"Name": "[2] 뒷머리 B"
+		},
+		{
+			"Id": "Param_Angle_Rotation_4_ArtMesh81",
+			"GroupId": "ParamGroupHairBackB",
+			"Name": "[3] 뒷머리 B"
+		},
+		{
+			"Id": "Param_Angle_Rotation_5_ArtMesh81",
+			"GroupId": "ParamGroupHairBackB",
+			"Name": "[4] 뒷머리 B"
+		},
+		{
+			"Id": "Param_Angle_Rotation_6_ArtMesh81",
+			"GroupId": "ParamGroupHairBackB",
+			"Name": "[5] 뒷머리 B"
+		},
+		{
+			"Id": "Param_Angle_Rotation_7_ArtMesh81",
+			"GroupId": "ParamGroupHairBackB",
+			"Name": "[6] 뒷머리 B"
+		},
+		{
+			"Id": "Param_Angle_Rotation_8_ArtMesh81",
+			"GroupId": "ParamGroupHairBackB",
+			"Name": "[7] 뒷머리 B"
+		},
+		{
+			"Id": "Param_Angle_Rotation_9_ArtMesh81",
+			"GroupId": "ParamGroupHairBackB",
+			"Name": "[8] 뒷머리 B"
+		},
+		{
+			"Id": "Param_Angle_Rotation_1_ArtMesh80",
+			"GroupId": "ParamGroupHairBackC",
+			"Name": "[0] 뒷머리 C"
+		},
+		{
+			"Id": "Param_Angle_Rotation_2_ArtMesh80",
+			"GroupId": "ParamGroupHairBackC",
+			"Name": "[1] 뒷머리 C"
+		},
+		{
+			"Id": "Param_Angle_Rotation_3_ArtMesh80",
+			"GroupId": "ParamGroupHairBackC",
+			"Name": "[2] 뒷머리 C"
+		},
+		{
+			"Id": "Param_Angle_Rotation_4_ArtMesh80",
+			"GroupId": "ParamGroupHairBackC",
+			"Name": "[3] 뒷머리 C"
+		},
+		{
+			"Id": "Param_Angle_Rotation_5_ArtMesh80",
+			"GroupId": "ParamGroupHairBackC",
+			"Name": "[4] 뒷머리 C"
+		},
+		{
+			"Id": "Param_Angle_Rotation_6_ArtMesh80",
+			"GroupId": "ParamGroupHairBackC",
+			"Name": "[5] 뒷머리 C"
+		},
+		{
+			"Id": "Param_Angle_Rotation_7_ArtMesh80",
+			"GroupId": "ParamGroupHairBackC",
+			"Name": "[6] 뒷머리 C"
+		},
+		{
+			"Id": "Param_Angle_Rotation_8_ArtMesh80",
+			"GroupId": "ParamGroupHairBackC",
+			"Name": "[7] 뒷머리 C"
+		},
+		{
+			"Id": "Param_Angle_Rotation_9_ArtMesh80",
+			"GroupId": "ParamGroupHairBackC",
+			"Name": "[8] 뒷머리 C"
+		}
+	],
+	"ParameterGroups": [
+		{
+			"Id": "ParamGroupFace",
+			"GroupId": "",
+			"Name": "얼굴"
+		},
+		{
+			"Id": "ParamGroupEyes",
+			"GroupId": "",
+			"Name": "눈"
+		},
+		{
+			"Id": "ParamGroupBody",
+			"GroupId": "",
+			"Name": "몸"
+		},
+		{
+			"Id": "ParamGroupArms",
+			"GroupId": "",
+			"Name": "팔뚝"
+		},
+		{
+			"Id": "ParamGroupFlame",
+			"GroupId": "",
+			"Name": "불꽃"
+		},
+		{
+			"Id": "ParamGroupEffectsA",
+			"GroupId": "",
+			"Name": "이펙트 A"
+		},
+		{
+			"Id": "ParamGroupEffectsB",
+			"GroupId": "",
+			"Name": "이펙트 B"
+		},
+		{
+			"Id": "ParamGroupSwing",
+			"GroupId": "",
+			"Name": "흔들"
+		},
+		{
+			"Id": "ParamGroupHairFront",
+			"GroupId": "",
+			"Name": "앞머리"
+		},
+		{
+			"Id": "ParamGroupHairSideR",
+			"GroupId": "",
+			"Name": "오른쪽 옆머리"
+		},
+		{
+			"Id": "ParamGroupHairSideL",
+			"GroupId": "",
+			"Name": "왼쪽 옆머리"
+		},
+		{
+			"Id": "ParamGroupHairBackA",
+			"GroupId": "",
+			"Name": "뒷머리 A"
+		},
+		{
+			"Id": "ParamGroupHairBackB",
+			"GroupId": "",
+			"Name": "뒷머리 B"
+		},
+		{
+			"Id": "ParamGroupHairBackC",
+			"GroupId": "",
+			"Name": "뒷머리 C"
+		}
+	],
+	"Parts": [
+		{
+			"Id": "PartCore",
+			"Name": "코어"
+		},
+		{
+			"Id": "PartFlame",
+			"Name": "불꽃"
+		},
+		{
+			"Id": "PartMagicPowersB",
+			"Name": "파동 B"
+		},
+		{
+			"Id": "PartMagicB",
+			"Name": "마법진 B"
+		},
+		{
+			"Id": "PartMagicPowersA",
+			"Name": "파동 A"
+		},
+		{
+			"Id": "PartMagicA",
+			"Name": "마법진 A"
+		},
+		{
+			"Id": "PartHat",
+			"Name": "모자"
+		},
+		{
+			"Id": "PartHair",
+			"Name": "머리칼"
+		},
+		{
+			"Id": "PartBrow",
+			"Name": "눈썹"
+		},
+		{
+			"Id": "PartEyeL",
+			"Name": "왼쪽 눈"
+		},
+		{
+			"Id": "PartEyeR",
+			"Name": "오른쪽 눈"
+		},
+		{
+			"Id": "PartFace",
+			"Name": "얼굴"
+		},
+		{
+			"Id": "PartArmR02",
+			"Name": "오른팔 차분"
+		},
+		{
+			"Id": "PartArmR01",
+			"Name": "오른팔"
+		},
+		{
+			"Id": "PartBody",
+			"Name": "몸"
+		},
+		{
+			"Id": "PartLegR",
+			"Name": "오른발"
+		},
+		{
+			"Id": "PartLegL",
+			"Name": "왼발"
+		},
+		{
+			"Id": "PartArmL",
+			"Name": "왼팔"
+		},
+		{
+			"Id": "PartHairBack",
+			"Name": "뒷머리"
+		},
+		{
+			"Id": "PartWaveSave",
+			"Name": "파동 쌓기"
+		},
+		{
+			"Id": "ArtMesh20_Skinning",
+			"Name": "왼쪽 옆머리(스키닝)"
+		},
+		{
+			"Id": "Part20",
+			"Name": "왼쪽 옆머리(회전)"
+		},
+		{
+			"Id": "ArtMesh67_Skinning",
+			"Name": "오른쪽 옆머리(스키닝)"
+		},
+		{
+			"Id": "Part19",
+			"Name": "오른쪽 옆머리(회전)"
+		},
+		{
+			"Id": "ArtMesh80_Skinning",
+			"Name": "뒷머리 C(스키닝)"
+		},
+		{
+			"Id": "Part17",
+			"Name": "뒷머리 C(회전)"
+		},
+		{
+			"Id": "ArtMesh81_Skinning",
+			"Name": "뒷머리 B(스키닝)"
+		},
+		{
+			"Id": "Part18",
+			"Name": "뒷머리 B(회전)"
+		},
+		{
+			"Id": "ArtMesh82_Skinning",
+			"Name": "뒷머리 A(스키닝)"
+		},
+		{
+			"Id": "Part16",
+			"Name": "뒷머리 A(회전)"
+		}
+	],
+	"CombinedParameters": [
+		[
+			"ParamFlameX",
+			"ParamFlameY"
+		],
+		[
+			"ParamEffectAX",
+			"ParamEffectAY"
+		],
+		[
+			"ParamEffectBX",
+			"ParamEffectBY"
+		],
+		[
+			"ParamHairFront01",
+			"ParamHairFront02"
+		]
+	]
+}
