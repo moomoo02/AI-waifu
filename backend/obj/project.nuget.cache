@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "FDW6Vzo22OnUNYhE3/HPg2wK9n3hYDAT+KbTtWzPd8weRFlwsdNFLGJ1f3IQaW4W9hPJDUPQV+FT005ZGxW+LA==",
+  "success": true,
+  "projectFilePath": "/Users/moomoo02/Code/AI waifu/backend/backend.csproj",
+  "expectedPackageFiles": [
+    "/Users/moomoo02/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/moomoo02/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/moomoo02/.nuget/packages/swashbuckle.aspnetcore/6.2.3/swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "/Users/moomoo02/.nuget/packages/swashbuckle.aspnetcore.swagger/6.2.3/swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "/Users/moomoo02/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.2.3/swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "/Users/moomoo02/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.2.3/swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}

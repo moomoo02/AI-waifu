@@ -8,7 +8,7 @@ const README_FILENAME = 'README.md';
 const NB_IMAGES_PER_LINE = 4;
 let nbImages = 0;
 
-let introduction = '# AI Waifu \n Are you lonely?  Do you need a friend?  Because I DO.  Inspired by *chatgpt* and *vtubers*, I attempt to create a virtual FRIEND.  Below are pictures of the progress I\'m making (I sure hope my employers dont see this...)\n '
+let introduction = '# AI Waifu \n Are you lonely?  Do you need a friend?  Because I DO.  Inspired by *chatgpt* and *vtubers*, I attempt to create a virtual FRIEND on the browser.  Below are pictures of the progress I\'m making (I sure hope my employers dont see this...)\n '
 let mdContent = introduction + '<table><tr>';
 //let journal = fs.readFileSync('./journal.md', 'utf8');
 
