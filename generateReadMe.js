@@ -43,7 +43,7 @@ getSortedFiles(ROOT_DIR).then((result) => {
             nbImages++;
             mdContent += `
             <td valign="bottom">
-            <img src="./Memories/${image.name}" width="200"><br>
+            <img src="./memories/${image.name}" width="200"><br>
             ${image.name} | ${parseDate(image.time)}
             </td>`;
         }
