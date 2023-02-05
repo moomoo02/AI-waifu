@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using backend.Repositories;
 using backend.Entities;
 using System.Collections.Generic;
+using System;
 
 namespace backend.Controllers
 {
@@ -20,6 +21,11 @@ namespace backend.Controllers
         public IEnumerable<Chat> GetChats()
         {
             return repository.GetChats();
+        }
+        //Get /items/id
+        [HttpGet("{id}")]
+        public Chat GetChat(Guid id){
+            return repository.GetChat(id);
         }
     }
 }

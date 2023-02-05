@@ -18,7 +18,7 @@ namespace backend.Repositories
             return chats;
         }
 
-        public Chat GetItem(Guid id)
+        public Chat GetChat(Guid id)
         {
             return chats.Where(chat => chat.Id == id).SingleOrDefault();
         } 
