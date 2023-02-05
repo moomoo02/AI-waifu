@@ -32,5 +32,10 @@ namespace backend.Repositories
             var index = chats.FindIndex(existingChat => existingChat.Id == chat.Id);
             chats[index] = chat;
         }
+        public void DeleteChat(Guid id)
+        {
+            var index = chats.FindIndex(existingChat => existingChat.Id == id);
+            chats.RemoveAt(index);  
+        }
     }
 }

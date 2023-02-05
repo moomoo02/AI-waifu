@@ -49,7 +49,7 @@ namespace backend.Controllers
             return CreatedAtAction(nameof(GetChat), new {Id = chat.Id}, chat.AsDto());
         }
         // Put  /chat
-        [HttpPut]
+        [HttpPut("{id}")]
         public ActionResult<ChatDto> UpdateChat(Guid id, UpdateChatDto chatDto){
             var existingChat = repository.GetChat(id);
 
@@ -65,6 +65,21 @@ namespace backend.Controllers
             };
 
             repository.UpdateChat(updatedChat);
+
+            return NoContent();
+        }
+        // DELETE /chats
+        [HttpDelete("{id}")]
+        public ActionResult DeleteChat(Guid id)
+        {
+            var existingChat = repository.GetChat(id);
+            
+            if (existingChat is null)
+            {
+                return NotFound();
+            }
+
+            repository.DeleteChat(id);
 
             return NoContent();
         }
