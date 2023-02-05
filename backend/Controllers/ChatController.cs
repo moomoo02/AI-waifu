@@ -48,5 +48,25 @@ namespace backend.Controllers
 
             return CreatedAtAction(nameof(GetChat), new {Id = chat.Id}, chat.AsDto());
         }
+        // Put  /chat
+        [HttpPut]
+        public ActionResult<ChatDto> UpdateChat(Guid id, UpdateChatDto chatDto){
+            var existingChat = repository.GetChat(id);
+
+            if (existingChat is null)
+            {
+                return NotFound();
+            }
+
+            Chat updatedChat = new()
+            {
+                Id = id,
+                Name = chatDto.Name
+            };
+
+            repository.UpdateChat(updatedChat);
+
+            return NoContent();
+        }
     }
 }

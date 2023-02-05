@@ -9,5 +9,6 @@ namespace backend.Repositories
         Chat GetChat(Guid id);
         IEnumerable<Chat> GetChats();
         void CreateChat(Chat chat);
+        void UpdateChat(Chat chat);
     }
 }

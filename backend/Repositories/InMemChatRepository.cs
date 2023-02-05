@@ -27,5 +27,10 @@ namespace backend.Repositories
         {
             chats.Add(chat);
         }
+        public void UpdateChat(Chat chat)
+        {
+            var index = chats.FindIndex(existingChat => existingChat.Id == chat.Id);
+            chats[index] = chat;
+        }
     }
 }

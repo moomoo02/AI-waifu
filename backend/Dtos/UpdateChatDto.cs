@@ -2,9 +2,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace backend.Dtos
 {
-    public record CreateChatDto
+    public record UpdateChatDto
     {
         [Required]
-        public string Name { get;  init; }
+        public string Name{ get; init; }
     }
 }
