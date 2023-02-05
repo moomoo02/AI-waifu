@@ -28,6 +28,7 @@ const parseDate = (timeInMilliseconds) => {
     var date = new Date(timeInMilliseconds);
     return date.toString().substring(4,15);
 }
+
 getSortedFiles(ROOT_DIR).then((result) => {
     //console.log(result);
     console.log(result);

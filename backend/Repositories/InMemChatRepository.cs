@@ -23,5 +23,9 @@ namespace backend.Repositories
         {
             return chats.Where(chat => chat.Id == id).SingleOrDefault();
         }
+        public void CreateChat(Chat chat)
+        {
+            chats.Add(chat);
+        }
     }
 }

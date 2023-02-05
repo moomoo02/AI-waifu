@@ -22,7 +22,7 @@ namespace backend.Controllers
         {   
             return repository.GetChats().Select( chat => chat.AsDto());
         } 
-        //Get /items/id
+        //Get /chat/id
         [HttpGet("{id}")]
         public ActionResult<ChatDto> GetChat(Guid id){
             var chat = repository.GetChat(id);
@@ -33,6 +33,20 @@ namespace backend.Controllers
             }
 
             return Ok(chat.AsDto());
+        }
+        // POST /chat
+        [HttpPost]
+        public ActionResult<ChatDto> CreateChat(CreateChatDto chatDto)
+        {
+            Chat chat = new()
+            {
+                Id = Guid.NewGuid(),
+                Name = chatDto.Name,
+            };
+
+            repository.CreateChat(chat);
+
+            return CreatedAtAction(nameof(GetChat), new {Id = chat.Id}, chat.AsDto());
         }
     }
 }
