@@ -5,6 +5,6 @@ namespace backend.Dtos
     public record UpdateChatDto
     {
         [Required]
-        public string Name{ get; init; }
+        public string Name { get; init; }
     }
 }

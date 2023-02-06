@@ -25,3 +25,16 @@
 /Users/moomoo02/Code/AI waifu/backend/obj/Debug/net6.0/backend.pdb
 /Users/moomoo02/Code/AI waifu/backend/obj/Debug/net6.0/backend.genruntimeconfig.cache
 /Users/moomoo02/Code/AI waifu/backend/obj/Debug/net6.0/ref/backend.dll
+/Users/moomoo02/Code/AI waifu/backend/bin/Debug/net6.0/AWSSDK.Core.dll
+/Users/moomoo02/Code/AI waifu/backend/bin/Debug/net6.0/AWSSDK.SecurityToken.dll
+/Users/moomoo02/Code/AI waifu/backend/bin/Debug/net6.0/DnsClient.dll
+/Users/moomoo02/Code/AI waifu/backend/bin/Debug/net6.0/MongoDB.Bson.dll
+/Users/moomoo02/Code/AI waifu/backend/bin/Debug/net6.0/MongoDB.Driver.dll
+/Users/moomoo02/Code/AI waifu/backend/bin/Debug/net6.0/MongoDB.Driver.Core.dll
+/Users/moomoo02/Code/AI waifu/backend/bin/Debug/net6.0/MongoDB.Libmongocrypt.dll
+/Users/moomoo02/Code/AI waifu/backend/bin/Debug/net6.0/SharpCompress.dll
+/Users/moomoo02/Code/AI waifu/backend/bin/Debug/net6.0/Snappier.dll
+/Users/moomoo02/Code/AI waifu/backend/bin/Debug/net6.0/ZstdSharp.dll
+/Users/moomoo02/Code/AI waifu/backend/bin/Debug/net6.0/runtimes/linux/native/libmongocrypt.so
+/Users/moomoo02/Code/AI waifu/backend/bin/Debug/net6.0/runtimes/osx/native/libmongocrypt.dylib
+/Users/moomoo02/Code/AI waifu/backend/bin/Debug/net6.0/runtimes/win/native/mongocrypt.dll
