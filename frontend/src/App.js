@@ -14,8 +14,9 @@ function App() {
 
   const [data, setData] = useState(null);
 
-  axios.get('/api').then((response) => {
-    setData(response.data.message);
+  axios.get('/chat').then((response) => {
+    const dataStr = JSON.stringify(response.data);
+    setData(dataStr);
   })
 
   useEffect(() => {

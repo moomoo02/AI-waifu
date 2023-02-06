@@ -4,13 +4,17 @@ using backend.Settings;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Bson;
+using OpenAI_API;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
 builder.Services.AddSingleton<IChatRepository, MongoDbChatRepository>();
-builder.Services.AddSingleton<IMongoClient>(ServiceProvider =>{
+builder.Services.AddSingleton<OpenAIAPI>(ServiceProvider => {
+    return new OpenAIAPI();
+});
+builder.Services.AddSingleton<IMongoClient>(ServiceProvider => {
     var settings = builder.Configuration.GetSection(nameof(MongoDatabaseSettings)).Get<MongoDbSettings>();
     return new MongoClient(settings.ConnectionString);
 });

@@ -38,3 +38,6 @@
 /Users/moomoo02/Code/AI waifu/backend/bin/Debug/net6.0/runtimes/linux/native/libmongocrypt.so
 /Users/moomoo02/Code/AI waifu/backend/bin/Debug/net6.0/runtimes/osx/native/libmongocrypt.dylib
 /Users/moomoo02/Code/AI waifu/backend/bin/Debug/net6.0/runtimes/win/native/mongocrypt.dll
+/Users/moomoo02/Code/AI waifu/backend/bin/Debug/net6.0/Microsoft.Bcl.AsyncInterfaces.dll
+/Users/moomoo02/Code/AI waifu/backend/bin/Debug/net6.0/Newtonsoft.Json.dll
+/Users/moomoo02/Code/AI waifu/backend/bin/Debug/net6.0/OpenAI_API.dll

@@ -105,3 +105,4 @@ dist
 
 .vscode
 nodeBackend/
+backend/.openai
