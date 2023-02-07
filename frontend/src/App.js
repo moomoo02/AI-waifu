@@ -4,6 +4,7 @@ import * as PIXI from 'pixi.js';
 import { Live2DModel } from 'pixi-live2d-display/cubism4';
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import Chat from './Chat'
 
 // expose PIXI to window so that this plugin is able to
 // reference window.PIXI.Ticker to automatically update Live2D models
@@ -13,6 +14,7 @@ window.PIXI = PIXI;
 function App() {
 
   const [data, setData] = useState(null);
+  const CanvasContainerElement = document.getElementById('canvas-container')
 
   axios.get('/chat').then((response) => {
     const dataStr = JSON.stringify(response.data);
@@ -23,7 +25,7 @@ function App() {
     const app = new PIXI.Application({
       view: document.getElementById("canvas"),
       autoStart: true,
-      resizeTo: window,
+      resizeTo: CanvasContainerElement,
       backgroundColor: 0x333333
     });
 
@@ -31,13 +33,12 @@ function App() {
       idleMotionGroup: "Idle"
     }).then((model) => {
       app.stage.addChild(model);
-      model.anchor.set(0.5, 0.5);
-      model.position.set(window.innerWidth / 4, window.innerHeight / 4);
+      model.anchor.set(0.5, 0.5); //Center model
 
       function resizeWaifu() {
-        model.scale.set(window.innerHeight / 1280 * .5);
-        model.x = (window.innerWidth) / 2;
-        model.y = (window.innerHeight + 1200) / 2;
+        model.scale.set(0.25);
+        model.x = (CanvasContainerElement.offsetWidth + 0) / 2;
+        model.y = (CanvasContainerElement.offsetHeight + 1200) / 2;
       }
       resizeWaifu();
 
@@ -49,9 +50,13 @@ function App() {
 
 
   return (
-  <div>
-  <canvas id="canvas" />
-  <h1>{data}</h1>
+  <div class='app'>
+  <div id='canvas-container' class='child waifu-container'>
+    <canvas id="canvas" />
+  </div>
+  <div class='child chat-container'>
+    <Chat />
+  </div>
   </div>
   
   );

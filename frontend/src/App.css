@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+
+.app {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+
+}
+
+.child {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.waifu-container {
+  width: 75%;
+  height: 75%;
+}
+
+.chat-container {
+  width: 24%;
+  height: 75%;
+}

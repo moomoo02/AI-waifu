@@ -8,7 +8,7 @@ namespace Backend.Controllers
     [Route("text-text")]
     public class TextToTextController : ControllerBase
     {
-        OpenAIAPI api;
+        private OpenAIAPI api;
         public TextToTextController(OpenAIAPI openAiApi){
             this.api = openAiApi;
         }
