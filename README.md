@@ -12,4 +12,8 @@
             <td valign="bottom">
             <img src="./memories/CRUD.png" width="200"><br>
             CRUD.png | Feb 05 2023
+            </td>
+            <td valign="bottom">
+            <img src="./memories/SimpleChat.png" width="200"><br>
+            SimpleChat.png | Feb 06 2023
             </td></tr></table>

@@ -38,7 +38,7 @@ function App() {
       function resizeWaifu() {
         model.scale.set(0.25);
         model.x = (CanvasContainerElement.offsetWidth + 0) / 2;
-        model.y = (CanvasContainerElement.offsetHeight + 1200) / 2;
+        model.y = (CanvasContainerElement.offsetHeight + 1000) / 2;
       }
       resizeWaifu();
 
