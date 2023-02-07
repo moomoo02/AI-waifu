@@ -11,8 +11,7 @@ import axios from 'axios';
 
 
 function Chat() {
-    const [messages, setMessages] = useState([{direction: "outgoing", content: "Decide whether a Tweet's sentiment is positive, neutral, or negative."},
-                                              {direction: "outgoing", content: "Tweet: I hated the new Batman movie!"}]);
+    const [messages, setMessages] = useState([]);
     const handleSend = async text => {
 
         // Logger user (sender)
@@ -32,12 +31,18 @@ function Chat() {
         //   conversationId: activeConversation.id,
         //   senderId: currentUserId,
         // });
-        axios.get('/text-text').then((response) => {
-            const dataStr = JSON.stringify(response.data);
-            setMessages((currentMessages) => ([...currentMessages, {direction: "incoming", content: dataStr}]));
+
+        //Render outgoing message on client
+        setMessages((currentMessages) => ([...currentMessages, {direction: "outgoing", content: text}]))
+        console.log(text + " Was sent");
+
+        //Recieve a response from backend
+        const requestUrl = '/text-text/' + text;
+        axios.get(requestUrl).then((response) => {
+            var data = response.data;
+            setMessages((currentMessages) => ([...currentMessages, {direction: data.direction, content: data.content}]));
           })
     
-        console.log(text + " Was sent");
     
     };
 
