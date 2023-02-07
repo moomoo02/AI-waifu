@@ -6,10 +6,6 @@
             model.gif | Feb 04 2023
             </td>
             <td valign="bottom">
-            <img src="./memories/SwaggerUI.png" width="200"><br>
-            SwaggerUI.png | Feb 04 2023
-            </td>
-            <td valign="bottom">
             <img src="./memories/CRUD.png" width="200"><br>
             CRUD.png | Feb 05 2023
             </td>
