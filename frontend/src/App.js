@@ -11,6 +11,7 @@ import Chat from './Chat'
 window.PIXI = PIXI;
 
 
+
 function App() {
 
   const [data, setData] = useState(null);

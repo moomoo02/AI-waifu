@@ -41,7 +41,9 @@ function Chat() {
         axios.get(requestUrl).then((response) => {
             var data = response.data;
             setMessages((currentMessages) => ([...currentMessages, {direction: data.direction, content: data.content}]));
-          })
+            // console.log("Now synthesizing to: " + audioFile);
+          });
+         
     
     
     };
