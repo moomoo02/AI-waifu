@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pEHDUGrNRu+Yk+2FIIAy+RohT0l7dZPe0ZqvCPETN3JoK7K3zVeLbQ/gmDKr13+jC/BCju+ff/rvT66MpQXRrw==",
+  "dgSpecHash": "ZymxI9xhkKv3Fb74+ai93vaoGVEbLELOFLFP3QymmB1YXoX2j4DHfZqS535c00durHhg2w42R3AO8UiRJqdNpg==",
   "success": true,
   "projectFilePath": "/Users/moomoo02/Code/AI waifu/backend/backend.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "/Users/moomoo02/.nuget/packages/awssdk.securitytoken/3.7.100.14/awssdk.securitytoken.3.7.100.14.nupkg.sha512",
     "/Users/moomoo02/.nuget/packages/dnsclient/1.6.1/dnsclient.1.6.1.nupkg.sha512",
     "/Users/moomoo02/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
+    "/Users/moomoo02/.nuget/packages/microsoft.cognitiveservices.speech/1.25.0/microsoft.cognitiveservices.speech.1.25.0.nupkg.sha512",
     "/Users/moomoo02/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "/Users/moomoo02/.nuget/packages/microsoft.extensions.logging.abstractions/2.0.0/microsoft.extensions.logging.abstractions.2.0.0.nupkg.sha512",
     "/Users/moomoo02/.nuget/packages/microsoft.netcore.platforms/5.0.0/microsoft.netcore.platforms.5.0.0.nupkg.sha512",

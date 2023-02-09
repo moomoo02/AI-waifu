@@ -107,3 +107,4 @@ dist
 nodeBackend/
 backend/.openai
 backend/Prompts/*.txt
+frontend/.env
