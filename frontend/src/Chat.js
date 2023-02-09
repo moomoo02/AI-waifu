@@ -10,7 +10,7 @@ import {
 import axios from 'axios';
 
 
-function Chat() {
+function Chat({setEmotion}) {
     const [messages, setMessages] = useState([]);
     const handleSend = async text => {
 
@@ -41,7 +41,8 @@ function Chat() {
         axios.get(requestUrl).then((response) => {
             var data = response.data;
             setMessages((currentMessages) => ([...currentMessages, {direction: data.direction, content: data.content}]));
-            // console.log("Now synthesizing to: " + audioFile);
+            setEmotion(data.emotion);
+            console.log(data.emotion);
           });
          
     
