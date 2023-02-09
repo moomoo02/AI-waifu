@@ -10,7 +10,7 @@ let nbImages = 0;
 
 let introduction = '# AI Waifu \n Are you lonely?  Do you need a friend?  Because I DO.  Inspired by *chatgpt* and *vtubers*, I attempt to create a virtual FRIEND on the browser.  I\'ll also be learning **C#** and **.NET** for the first time!  Below are pictures of the progress I\'m making *(I sure hope my employers dont see this...)*\n '
 let mdContent = introduction + '<table><tr>';
-//let journal = fs.readFileSync('./journal.md', 'utf8');
+let journal = fs.readFileSync('./Journal.md', 'utf8');
 
 const getSortedFiles = async (dir) => {
     const files = await fs.promises.readdir(dir);
@@ -50,6 +50,6 @@ getSortedFiles(ROOT_DIR).then((result) => {
         }
      });
      mdContent += `</tr></table>\n`;
-    //  mdContent += journal;
+     mdContent += journal;
      fs.writeFileSync(path.join("./", README_FILENAME), mdContent);
 });
