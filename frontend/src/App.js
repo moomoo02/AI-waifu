@@ -53,7 +53,12 @@ function App() {
 
   useEffect(() => {
     console.log("Emotion has changed to ", emotion);
-    if (model != null) model.expression("exp_0" + expressions[emotion]);
+    if (model != null){
+      model.expression("exp_0" + expressions[emotion]);
+      if (getRandomInt(5) == 0){
+        model.motion("Tap@Body");
+      }
+    }
   },[emotion]) 
 
   function handleButton(id)
@@ -67,6 +72,9 @@ function App() {
     model.motion("Tap@Body");
   }
   
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
   return (
   <div class='app'>
 

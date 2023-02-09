@@ -16,4 +16,8 @@
             <td valign="bottom">
             <img src="./memories/Expressions.gif" width="200"><br>
             Expressions.gif | Feb 08 2023
+            </td></tr><tr>
+            <td valign="bottom">
+            <img src="./memories/SentimentAnalysis.gif" width="200"><br>
+            SentimentAnalysis.gif | Feb 09 2023
             </td></tr></table>
