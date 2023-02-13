@@ -19,16 +19,16 @@ namespace Backend.Controllers
         }
         //GET /text-text
         [HttpGet]
-        public ActionResult<MessageDto> GetText()
+        public async Task<ActionResult<MessageDto>> GetText()
         {
             string OutputMsg = string.Empty;
             CompletionRequest completionRequest = new CompletionRequest();
             completionRequest.Prompt = BasePrompt;
             completionRequest.Model= OpenAI_API.Models.Model.DavinciText;
 
-            var completion = api.Completions.CreateCompletionAsync(completionRequest);
+            var completion = await api.Completions.CreateCompletionAsync(completionRequest);
 
-            foreach (var comp in completion.Result.Completions)
+            foreach (var comp in completion.Completions)
             {
                 OutputMsg += comp.Text;
             }
@@ -43,13 +43,13 @@ namespace Backend.Controllers
         }
         //GET /text-text/prompt
         [HttpGet("{prompt}")]
-        public ActionResult<MessageDto> GetResponse(string prompt)
+        public async Task<ActionResult<MessageDto>> GetResponsAsync(string prompt)
         {
             // Get Response message
-            string contentMessage = GetText(prompt);
+            string contentMessage = await GetTextAsync(prompt);
 
             // Sentiment Analysis on text
-            string emotionMessage = GetEmotion(contentMessage);
+            string emotionMessage = await GetEmotionAsync(contentMessage);
 
             MessageDto response = new MessageDto()
             {
@@ -63,7 +63,7 @@ namespace Backend.Controllers
             return Ok(response);
         }
         // Sentiment Analysis on text
-        private String GetEmotion(string text)
+        private async Task<String> GetEmotionAsync(string text)
         {
             // Get Emotion
             string OutputMsg = string.Empty;
@@ -72,9 +72,9 @@ namespace Backend.Controllers
             completionRequest.Model= OpenAI_API.Models.Model.DavinciText;
             completionRequest.MaxTokens = 16;
 
-            var completion = api.Completions.CreateCompletionAsync(completionRequest);
+            var completion = await api.Completions.CreateCompletionAsync(completionRequest);
 
-            foreach (var comp in completion.Result.Completions)
+            foreach (var comp in completion.Completions)
             {
                 OutputMsg += comp.Text;
             }
@@ -85,7 +85,7 @@ namespace Backend.Controllers
             return CleanedOutputMsg;
         }
         // Text to Text 
-        private string GetText(string prompt)
+        private async Task<string> GetTextAsync(string prompt)
         {
             // Get Response message
             string OutputMsg = string.Empty;
@@ -94,9 +94,9 @@ namespace Backend.Controllers
             completionRequest.Model= OpenAI_API.Models.Model.DavinciText;
             completionRequest.MaxTokens = 100;
 
-            var completion = api.Completions.CreateCompletionAsync(completionRequest);
+            var completion = await api.Completions.CreateCompletionAsync(completionRequest);
 
-            foreach (var comp in completion.Result.Completions)
+            foreach (var comp in completion.Completions)
             {
                 OutputMsg += comp.Text;
             }
