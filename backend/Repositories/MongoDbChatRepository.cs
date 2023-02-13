@@ -15,32 +15,32 @@ namespace backend.Repositories
             IMongoDatabase database = mongoClient.GetDatabase(databaseName);
             chatCollection = database.GetCollection<Chat>(collectionName);
         }
-        public Task CreateChatAsync(Chat chat)
+        public async Task CreateChatAsync(Chat chat)
         {
-            chatCollection.InsertOneAsync(chat);
+            await chatCollection.InsertOneAsync(chat);
         }
 
-        public void DeleteChatAsync(Guid id)
-        {
-            var filter = filterBuilder.Eq(chat => chat.Id, id);
-            chatCollection.DeleteOne(filter);
-        }
-
-        public Chat GetChatAsync(Guid id)
+        public async Task DeleteChatAsync(Guid id)
         {
             var filter = filterBuilder.Eq(chat => chat.Id, id);
-            return chatCollection.Find(filter).SingleOrDefault();
+            await chatCollection.DeleteOneAsync(filter);
         }
 
-        public IEnumerable<Chat> GetChatsAsync()
+        public async Task<Chat> GetChatAsync(Guid id)
         {
-            return chatCollection.Find(new BsonDocument()).ToList();
+            var filter = filterBuilder.Eq(chat => chat.Id, id);
+            return await chatCollection.Find(filter).SingleOrDefaultAsync();
         }
 
-        public void UpdateChatAsync(Chat chat)
+        public async Task<IEnumerable<Chat>> GetChatsAsync()
+        {
+            return await chatCollection.Find(new BsonDocument()).ToListAsync();
+        }
+
+        public async Task UpdateChatAsync(Chat chat)
         {
             var filter = filterBuilder.Eq(existingChat => existingChat.Id, chat.Id);
-            chatCollection.ReplaceOne(filter, chat);
+            await chatCollection.ReplaceOneAsync(filter, chat);
         }
     }
 }
