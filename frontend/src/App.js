@@ -82,7 +82,6 @@ function App() {
       <canvas id="canvas" />
     </div>
 
-
   <div class='child chat-container'>
     <Chat setEmotion={setEmotion}/>
   </div>

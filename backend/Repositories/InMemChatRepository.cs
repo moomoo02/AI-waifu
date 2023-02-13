@@ -14,25 +14,25 @@ namespace backend.Repositories
             new Chat { Id= Guid.NewGuid(), Name= "moomoo03" }
         };
 
-        public IEnumerable<Chat> GetChats()
+        public IEnumerable<Chat> GetChatsAsync()
         {
             return chats;
         }
 
-        public Chat GetChat(Guid id)
+        public Chat GetChatAsync(Guid id)
         {
             return chats.Where(chat => chat.Id == id).SingleOrDefault();
         }
-        public void CreateChat(Chat chat)
+        public void CreateChatAsync(Chat chat)
         {
             chats.Add(chat);
         }
-        public void UpdateChat(Chat chat)
+        public void UpdateChatAsync(Chat chat)
         {
             var index = chats.FindIndex(existingChat => existingChat.Id == chat.Id);
             chats[index] = chat;
         }
-        public void DeleteChat(Guid id)
+        public void DeleteChatAsync(Guid id)
         {
             var index = chats.FindIndex(existingChat => existingChat.Id == id);
             chats.RemoveAt(index);  

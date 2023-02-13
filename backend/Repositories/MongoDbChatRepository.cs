@@ -15,29 +15,29 @@ namespace backend.Repositories
             IMongoDatabase database = mongoClient.GetDatabase(databaseName);
             chatCollection = database.GetCollection<Chat>(collectionName);
         }
-        public void CreateChat(Chat chat)
+        public Task CreateChatAsync(Chat chat)
         {
-            chatCollection.InsertOne(chat);
+            chatCollection.InsertOneAsync(chat);
         }
 
-        public void DeleteChat(Guid id)
+        public void DeleteChatAsync(Guid id)
         {
             var filter = filterBuilder.Eq(chat => chat.Id, id);
             chatCollection.DeleteOne(filter);
         }
 
-        public Chat GetChat(Guid id)
+        public Chat GetChatAsync(Guid id)
         {
             var filter = filterBuilder.Eq(chat => chat.Id, id);
             return chatCollection.Find(filter).SingleOrDefault();
         }
 
-        public IEnumerable<Chat> GetChats()
+        public IEnumerable<Chat> GetChatsAsync()
         {
             return chatCollection.Find(new BsonDocument()).ToList();
         }
 
-        public void UpdateChat(Chat chat)
+        public void UpdateChatAsync(Chat chat)
         {
             var filter = filterBuilder.Eq(existingChat => existingChat.Id, chat.Id);
             chatCollection.ReplaceOne(filter, chat);

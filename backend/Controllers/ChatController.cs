@@ -20,12 +20,12 @@ namespace backend.Controllers
         [HttpGet]
         public IEnumerable<ChatDto> GetChats()
         {   
-            return repository.GetChats().Select( chat => chat.AsDto());
+            return repository.GetChatsAsync().Select( chat => chat.AsDto());
         } 
         //Get /chat/id
         [HttpGet("{id}")]
         public ActionResult<ChatDto> GetChat(Guid id){
-            var chat = repository.GetChat(id);
+            var chat = repository.GetChatAsync(id);
 
             if (chat is null)
             {
@@ -44,14 +44,14 @@ namespace backend.Controllers
                 Name = chatDto.Name,
             };
 
-            repository.CreateChat(chat);
+            repository.CreateChatAsync(chat);
 
             return CreatedAtAction(nameof(GetChat), new {Id = chat.Id}, chat.AsDto());
         }
         // Put  /chat
         [HttpPut("{id}")]
         public ActionResult<ChatDto> UpdateChat(Guid id, UpdateChatDto chatDto){
-            var existingChat = repository.GetChat(id);
+            var existingChat = repository.GetChatAsync(id);
 
             if (existingChat is null)
             {
@@ -64,7 +64,7 @@ namespace backend.Controllers
                 Name = chatDto.Name
             };
 
-            repository.UpdateChat(updatedChat);
+            repository.UpdateChatAsync(updatedChat);
 
             return NoContent();
         }
@@ -72,14 +72,14 @@ namespace backend.Controllers
         [HttpDelete("{id}")]
         public ActionResult DeleteChat(Guid id)
         {
-            var existingChat = repository.GetChat(id);
+            var existingChat = repository.GetChatAsync(id);
             
             if (existingChat is null)
             {
                 return NotFound();
             }
 
-            repository.DeleteChat(id);
+            repository.DeleteChatAsync(id);
 
             return NoContent();
         }

@@ -6,10 +6,10 @@ namespace backend.Repositories
 {
     public interface IChatRepository
     {
-        Chat GetChat(Guid id);
-        IEnumerable<Chat> GetChats();
-        void CreateChat(Chat chat);
-        void UpdateChat(Chat chat);
-        void DeleteChat(Guid id);
+        Task<Chat> GetChatAsync(Guid id);
+        Task<IEnumerable<Chat>> GetChatsAsync();
+        Task CreateChatAsync(Chat chat);
+        Task UpdateChatAsync(Chat chat);
+        Task DeleteChatAsync(Guid id);
     }
 }
