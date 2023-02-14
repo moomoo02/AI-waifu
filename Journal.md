@@ -29,3 +29,4 @@
 
 ## Feb 13
 * Migrated all controller methods from synchronous to asynchronous since we are making requests to OpenAI Api.  
+* Spent about 6 hours trying to containerize the backend as a docker image, and its still not working.  Please help.

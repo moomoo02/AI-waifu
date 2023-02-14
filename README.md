@@ -46,3 +46,10 @@
 
 ## Feb 9
 * Wrote a new prompt for the openai chat model on classifying emotions of a text message.  Now, in addition to the message, the Text-Text endpoint will also return an emotion associated with the message.  SHE NOW HAS EXPRESSIONS ADN EMOTIONS!!!!K WAIUDJNAWKDNKAWJNDWK
+
+## Feb 12
+* I was inactive for a while.  I was touching grass for the first time this year.  Now I'm currently chilling at a university for a week for fun, so I should have a lot more time to grind on making her.  Lets get this bread!
+
+## Feb 13
+* Migrated all controller methods from synchronous to asynchronous since we are making requests to OpenAI Api.  
+* Spent about 6 hours trying to containerize the backend as a docker image, and its still not working.  Please help.

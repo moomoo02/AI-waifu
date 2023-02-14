@@ -5,9 +5,13 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>f0a37f4a-31c1-4395-a4ab-3aea8d6b4f83</UserSecretsId>
+    <!-- Enable the below properties to build docker image -->
+    <!-- <OutputType>Library</OutputType> 
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>  -->
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.MongoDb" Version="6.0.2" />
     <PackageReference Include="Microsoft.CognitiveServices.Speech" Version="1.25.0" />
     <PackageReference Include="MongoDB.Driver" Version="2.19.0" />
     <PackageReference Include="OpenAI" Version="1.4.0" />
