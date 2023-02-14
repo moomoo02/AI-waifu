@@ -14,24 +14,6 @@ function Chat({setEmotion}) {
     const [messages, setMessages] = useState([]);
     const handleSend = async text => {
 
-        // Logger user (sender)
-        // const currentUserId = "123";
-    
-        // const message = new ChatMessage({
-        //   id: "",
-        //   content: text,
-        //   contentType: MessageContentType.TextHtml,
-        //   senderId: currentUserId,
-        //   direction: MessageDirection.Outgoing,
-        //   status: MessageStatus.Sent
-        // });
-    
-        // sendMessage({
-        //   message,
-        //   conversationId: activeConversation.id,
-        //   senderId: currentUserId,
-        // });
-
         //Render outgoing message on client
         setMessages((currentMessages) => ([...currentMessages, {direction: "outgoing", content: text}]))
         console.log(text + " Was sent");
@@ -58,7 +40,6 @@ function Chat({setEmotion}) {
               type: "text",
               payload: m.content,
               direction: m.direction,
-              
             }} />)}
         </MessageList>
         <MessageInput placeholder="Type message here" onSend={handleSend} />
