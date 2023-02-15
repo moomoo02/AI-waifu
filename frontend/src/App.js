@@ -39,16 +39,13 @@ function App() {
     }).then((model) => {
       app.stage.addChild(model);
       model.anchor.set(0.5, 0.5); //Center model
-      console.log("HERE");
-      
-      console.log("Canvas width = " + CanvasContainerElement.current.offsetWidth); //270
-      console.log("Canvas height = " + CanvasContainerElement.current.offsetHeight); //572
 
+      //Scale and Position model
       model.scale.set(scale);
-      // model.x = (270 + 0) / 2;
-      // model.y = (572 + 1000) / 2;
       model.x = (CanvasContainerElement.current.offsetWidth + 0) / 2;
       model.y = (CanvasContainerElement.current.offsetHeight + 1000) / 2;
+
+
       console.log("Model Set");
       setModel((currentModel) => (model), () => {console.log("Set")});
       // model.on("pointertap", () => {
