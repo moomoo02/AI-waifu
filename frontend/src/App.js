@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import * as PIXI from 'pixi.js';
 import { Live2DModel } from 'pixi-live2d-display/cubism4';
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import axios from 'axios';
 import Chat from './Chat'
 import { Button } from '@chatscope/chat-ui-kit-react';
@@ -13,18 +13,21 @@ window.PIXI = PIXI;
 
 const expressions = {"Neutral": 1, "Happy": 2, "Smug": 3, "Excited": 4, "Sad": 5, "Embarassed": 6, "Scared": 7, "Annoyed": 8};
 
+
 function App() {
 
   const [model, setModel] = useState();
-  const CanvasContainerElement = document.getElementById('canvas-container')
+  const CanvasContainerElement = useRef(null);
   const [scale, setScale] = useState(0.25);
   const [emotion, setEmotion] = useState("Neutral");
 
   useEffect(() => {
+
+    console.log("UseEffect " + CanvasContainerElement.current);
     const app = new PIXI.Application({
       view: document.getElementById("canvas"),
       autoStart: true,
-      resizeTo: CanvasContainerElement,
+      resizeTo: CanvasContainerElement.current,
       backgroundColor: 0x333333
     });
 
@@ -36,13 +39,16 @@ function App() {
     }).then((model) => {
       app.stage.addChild(model);
       model.anchor.set(0.5, 0.5); //Center model
+      console.log("HERE");
+      
+      console.log("Canvas width = " + CanvasContainerElement.current.offsetWidth); //270
+      console.log("Canvas height = " + CanvasContainerElement.current.offsetHeight); //572
 
-      function resizeWaifu() {
-        model.scale.set(scale);
-        model.x = (CanvasContainerElement.offsetWidth + 0) / 2;
-        model.y = (CanvasContainerElement.offsetHeight + 1000) / 2;
-      }
-      resizeWaifu();
+      model.scale.set(scale);
+      // model.x = (270 + 0) / 2;
+      // model.y = (572 + 1000) / 2;
+      model.x = (CanvasContainerElement.current.offsetWidth + 0) / 2;
+      model.y = (CanvasContainerElement.current.offsetHeight + 1000) / 2;
       console.log("Model Set");
       setModel((currentModel) => (model), () => {console.log("Set")});
       // model.on("pointertap", () => {
@@ -61,6 +67,16 @@ function App() {
     }
   },[emotion]) 
 
+  // useEffect(() => {
+  //   function resizeWaifu() {
+  //     model.scale.set(scale);
+  //     console.log("Canvas width = " + CanvasContainerElement.offsetWidth);
+  //     model.x = (CanvasContainerElement.offsetWidth + 0) / 2;
+  //     model.y = (CanvasContainerElement.offsetHeight + 1000) / 2;
+  //   }
+  //   resizeWaifu();
+  // }, [model, CanvasContainerElement])
+
   function handleButton(id)
   {
     console.log("Button")
@@ -78,7 +94,7 @@ function App() {
   return (
   <div class='app'>
 
-    <div id='canvas-container' class='child waifu-container'>
+    <div ref={CanvasContainerElement} id='canvas-container' class='child waifu-container'>
       <canvas id="canvas" />
     </div>
 
