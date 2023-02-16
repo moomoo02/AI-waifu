@@ -35,3 +35,8 @@
 
 ## Feb 14
 * I'm a bit annoyed.  I have a prompt folder for all my prompts, but for some reason it doesn't work in the docker container because my prompts cannot be found.  I'm forced to put the prompts inline, so now the controllers look ugly T-T.
+* Ran into a problem where no cloud provider (Heroku, Azure, DigitalOcean) would allow my backend to work.  It seems that it is because the cloud is amd64 while my docker container runs on arm64.  This is one of the rare times when I regret getting an M1 Mac...
+
+## Feb 15
+* Using docker-compose to manage the docker containers.  Ran into CORS problems but fixed it by adding my own policy and enabling CORS in the backend.
+* LETS GOOO, WAS FINALLY ABLE TO DEPLOY EARLY PROTOTYPE OF HER!  ONLY TOOK *looks at watch* 4 DAYS OF SUFFERING!
