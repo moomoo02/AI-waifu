@@ -13,27 +13,6 @@ namespace Backend.Controllers
         private OpenAIAPI api;
         static private string BasePrompt = backend.Prompts.BasePrompt;
         static private string SentinentAnalysisPrompt = backend.Prompts.SentinentAnalysisPrompt;
-1. Neutral
-2. Happy
-3. Smug
-4. Excited
-5. Sad
-6. Embarassed
-7. Scared
-8. Annoyed
-
-Here are some examples of your task:
-Her: Hey there! It's nice to meet you.
-Normal
-Her: T-Thank you!
-Embarassed
-
-Some notes:
-1.  When she stumbles over her words, it usually means she is flustered or embarassed.
-2. When she is teased or made fun of, she pouts or feels annoyed.
-
-From now on, perform your task.
-Her:  ";
         public TextToTextController(OpenAIAPI openAiApi){
             this.api = openAiApi;
             //Create a completion

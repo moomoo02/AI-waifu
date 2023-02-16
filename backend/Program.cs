@@ -9,8 +9,23 @@ using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using System.Text.Json;
 using System.Net.Mime;
 
+var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 var builder = WebApplication.CreateBuilder(args);
 var mongoDbSettings = builder.Configuration.GetSection(nameof(MongoDatabaseSettings)).Get<MongoDbSettings>();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy  =>
+                      {
+                          policy.WithOrigins("http://example.com",
+                                              "http://www.contoso.com",
+                                              "localhost:3000")                                                  
+                                                  .AllowAnyHeader()                                                    
+                                                  .AllowAnyMethod();
+                      });
+});
 
 // Add services to the container.
 BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
@@ -48,6 +63,8 @@ if (app.Environment.IsDevelopment())
 {
     app.UseHttpsRedirection();
 }
+
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseAuthorization();
 

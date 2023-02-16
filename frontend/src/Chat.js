@@ -8,7 +8,8 @@ import {
   MessageInput,
 } from "@chatscope/chat-ui-kit-react";
 import axios from 'axios';
-
+import { API_URL } from "./api";
+axios.defaults.withCredentials = true;
 
 function Chat({setEmotion}) {
     const [messages, setMessages] = useState([]);
@@ -19,7 +20,7 @@ function Chat({setEmotion}) {
         console.log(text + " Was sent");
 
         //Recieve a response from backend
-        const requestUrl = '/text-text/' + text;
+        const requestUrl = API_URL + '/text-text/' + text;
         axios.get(requestUrl).then((response) => {
             var data = response.data;
             setMessages((currentMessages) => ([...currentMessages, {direction: data.direction, content: data.content}]));

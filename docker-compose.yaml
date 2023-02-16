@@ -1,0 +1,16 @@
+services:
+  backend:
+    build: backend/.
+    ports:
+    - "8080:80"
+    container_name: backend
+  frontend:
+    build: frontend/.
+    ports:
+    - "3000:3000"
+    container_name: frontend
+  mongo:
+    image: mongo
+    ports:
+    - "27017:27017"
+    container_name: database
