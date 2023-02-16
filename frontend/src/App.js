@@ -6,6 +6,10 @@ import React, {useState, useEffect, useRef} from 'react';
 import axios from 'axios';
 import Chat from './Chat'
 import { Button } from '@chatscope/chat-ui-kit-react';
+import ReactGA from "react-ga";
+
+const TRACKING_ID = "UA-252462541-1";
+ReactGA.initialize(TRACKING_ID); 
 
 // expose PIXI to window so that this plugin is able to
 // reference window.PIXI.Ticker to automatically update Live2D models
@@ -22,8 +26,8 @@ function App() {
   const [emotion, setEmotion] = useState("Neutral");
 
   useEffect(() => {
+    ReactGA.pageview(window.location.pathname);
 
-    console.log("UseEffect " + CanvasContainerElement.current);
     const app = new PIXI.Application({
       view: document.getElementById("canvas"),
       autoStart: true,

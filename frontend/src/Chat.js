@@ -9,6 +9,8 @@ import {
 } from "@chatscope/chat-ui-kit-react";
 import axios from 'axios';
 import { API_URL } from "./api";
+import ReactGA from "react-ga";
+
 axios.defaults.withCredentials = true;
 
 function Chat({setEmotion}) {
@@ -27,6 +29,11 @@ function Chat({setEmotion}) {
             setEmotion(data.emotion);
             console.log(data.emotion);
           });
+
+          ReactGA.event({
+            category: "Chat",
+            action: "Message Sent",
+          })
          
     
     
