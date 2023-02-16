@@ -1,9 +1,12 @@
+
 services:
   backend:
     build: backend/.
     ports:
     - "8080:80"
     container_name: backend
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
   frontend:
     build: frontend/.
     ports:
