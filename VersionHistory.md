@@ -1,3 +1,6 @@
+
+# Version History
+
 ## Version 1.0.2 (In progress)
 ### By march
 For this update, I want to get text-to-speech up and working.  You should be able to communicate by voice, and she should be able to do the same.
