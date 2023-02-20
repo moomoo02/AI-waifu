@@ -56,7 +56,7 @@
       ],
       "Speak": [
         {
-          "File": "motions/speak.motion3.json"
+          "File": "motions/speak1.motion3.json"
         },
         {
           "File": "motions/speak2.motion3.json"
