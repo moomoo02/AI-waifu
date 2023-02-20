@@ -50,6 +50,7 @@ First barebones version deployed on AWS.  It features:
 * Simple UI with waifu and chat to allow for simple interactions.
 * Expressions change based on emotions.
 <br/>
+
 # Journal
 
 ## Feb 4
