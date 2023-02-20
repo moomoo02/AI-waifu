@@ -43,7 +43,7 @@ namespace Backend.Controllers
         }
         //GET /text-text/prompt
         [HttpGet("{prompt}")]
-        public async Task<ActionResult<MessageDto>> GetResponsAsync(string prompt)
+        public async Task<ActionResult<MessageDto>> GetResponseAsync(string prompt)
         {
             // Get Response message
             string contentMessage = await GetTextAsync(prompt);
@@ -55,11 +55,12 @@ namespace Backend.Controllers
             {
                 direction = "incoming",
                 content = contentMessage,
-                emotion = emotionMessage
+                emotion = emotionMessage,
+                prompt = BasePrompt
             };
             
             //Update basePrompt
-            //BasePrompt += prompt + " Friend: " + contentMessage + " Protagonist: ";
+            BasePrompt += prompt + "\nFriend: " + contentMessage + "\nProtagonist: ";
             return Ok(response);
         }
         // Sentiment Analysis on text
