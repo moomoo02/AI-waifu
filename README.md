@@ -20,6 +20,14 @@ Current version (10% done): [AI-Waifu-Website](http://44.213.112.252:3000/) <br/
             <td valign="bottom">
             <img src="./memories/SentimentAnalysis.gif" width="200"><br>
             SentimentAnalysis.gif | Feb 09 2023
+            </td>
+            <td valign="bottom">
+            <img src="./memories/SpeakingAnimation.gif" width="200"><br>
+            SpeakingAnimation.gif | Feb 20 2023
+            </td>
+            <td valign="bottom">
+            <img src="./memories/SheSpeaks!.gif" width="200"><br>
+            SheSpeaks!.gif | Feb 20 2023
             </td></tr></table>
 
 # Journal
@@ -63,3 +71,6 @@ Current version (10% done): [AI-Waifu-Website](http://44.213.112.252:3000/) <br/
 ## Feb 15
 * Using docker-compose to manage the docker containers.  Ran into CORS problems but fixed it by adding my own policy and enabling CORS in the backend.
 * LETS GOOO, WAS FINALLY ABLE TO DEPLOY EARLY PROTOTYPE OF HER!  ONLY TOOK *looks at watch* 4 DAYS OF SUFFERING!
+
+## Feb 20
+* Holy cow I was so dead after my trip that I didn't do anything for a few days.  I was OUT.  Today, I decided to be productive so I learned about model rigging and animations in Live2d and was able to create a few nice speaking animations.  It was so freaking hard, and I'm in utter awe at people who rig vtuber models... You guys are crazy.

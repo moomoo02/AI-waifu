@@ -40,3 +40,6 @@
 ## Feb 15
 * Using docker-compose to manage the docker containers.  Ran into CORS problems but fixed it by adding my own policy and enabling CORS in the backend.
 * LETS GOOO, WAS FINALLY ABLE TO DEPLOY EARLY PROTOTYPE OF HER!  ONLY TOOK *looks at watch* 4 DAYS OF SUFFERING!
+
+## Feb 20
+* Holy cow I was so dead after my trip that I didn't do anything for a few days.  I was OUT.  Today, I decided to be productive so I learned about model rigging and animations in Live2d and was able to create a few nice speaking animations.  It was so freaking hard, and I'm in utter awe at people who rig vtuber models... You guys are crazy.
