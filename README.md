@@ -22,8 +22,8 @@ Current version (10% done): [AI-Waifu-Website](http://44.213.112.252:3000/) <br/
             SentimentAnalysis.gif | Feb 09 2023
             </td>
             <td valign="bottom">
-            <img src="./memories/SpeakingAnimation.gif" width="200"><br>
-            SpeakingAnimation.gif | Feb 20 2023
+            <img src="./memories/MouthRigging.gif" width="200"><br>
+            MouthRigging.gif | Feb 20 2023
             </td>
             <td valign="bottom">
             <img src="./memories/SheSpeaks!.gif" width="200"><br>
