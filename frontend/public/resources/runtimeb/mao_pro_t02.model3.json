@@ -53,6 +53,11 @@
         {
           "File": "motions/mtn_03.motion3.json"
         }
+      ],
+      "Speak": [
+        {
+          "File": "motions/speak.motion3.json"
+        }
       ]
     }
   },

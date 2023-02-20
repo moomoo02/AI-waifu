@@ -24,6 +24,7 @@ function App() {
   const CanvasContainerElement = useRef(null);
   const [scale, setScale] = useState(0.25);
   const [emotion, setEmotion] = useState("Neutral");
+  const [speak, setSpeak] = useState(false);
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname);
@@ -68,15 +69,13 @@ function App() {
     }
   },[emotion]) 
 
-  // useEffect(() => {
-  //   function resizeWaifu() {
-  //     model.scale.set(scale);
-  //     console.log("Canvas width = " + CanvasContainerElement.offsetWidth);
-  //     model.x = (CanvasContainerElement.offsetWidth + 0) / 2;
-  //     model.y = (CanvasContainerElement.offsetHeight + 1000) / 2;
-  //   }
-  //   resizeWaifu();
-  // }, [model, CanvasContainerElement])
+  useEffect(() => {
+    console.log("Spoke");
+    if (speak == true){
+      model.motion("Speak");
+      setSpeak(false);
+    }
+  },[speak]) 
 
   function handleButton(id)
   {
@@ -89,6 +88,11 @@ function App() {
     model.motion("Tap@Body");
   }
   
+  function handleSpeakMotion(id)
+  {
+    model.motion("Speak");
+  }
+
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
@@ -100,11 +104,12 @@ function App() {
     </div>
 
   <div class='child chat-container'>
-    <Chat setEmotion={setEmotion}/>
+    <Chat setSpeak={setSpeak} setEmotion={setEmotion}/>
   </div>
   {Object.keys(expressions).map((expression) => <Button onClick={() => handleButton(expressions[expression])}>{expression} </Button>)}
  {/* .map((key,val) => <Button onClick={() => handleButton(key)}> Exp {val} </Button>)} */}
   <Button onClick={handleButtonMotion}> Motion 1 </Button>
+  <Button onClick={handleSpeakMotion}> Motion 2 </Button>
   </div>
   
   );

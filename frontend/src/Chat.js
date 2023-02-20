@@ -13,7 +13,7 @@ import ReactGA from "react-ga";
 
 axios.defaults.withCredentials = true;
 
-function Chat({setEmotion}) {
+function Chat({setSpeak, setEmotion}) {
     const [messages, setMessages] = useState([]);
     const handleSend = async text => {
 
@@ -27,8 +27,10 @@ function Chat({setEmotion}) {
             var data = response.data;
             setMessages((currentMessages) => ([...currentMessages, {direction: data.direction, content: data.content}]));
             setEmotion(data.emotion);
+            setSpeak(true);
             console.log(data.emotion);
           });
+          
 
           ReactGA.event({
             category: "Chat",
