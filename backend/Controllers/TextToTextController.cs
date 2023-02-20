@@ -56,7 +56,6 @@ namespace Backend.Controllers
                 direction = "incoming",
                 content = contentMessage,
                 emotion = emotionMessage,
-                prompt = BasePrompt
             };
             
             //Update basePrompt
