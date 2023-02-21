@@ -1,5 +1,5 @@
 # AI Waifu 
-Current version (10% done): [AI-Waifu-Website](http://44.213.112.252:3000/) <br/> <br/> Are you lonely?  Do you need a friend?  Because I DO.  Inspired by *chatgpt* and *vtubers*, I attempt to create a virtual FRIEND on the browser.  I'll also be learning **C#** and **.NET** for the first time!  Below are pictures of the progress I'm making *(I sure hope my employers dont see this...)*
+Current version (15% done): [AI-Waifu-Website](http://35.175.110.252:3000/) <br/> <br/> Are you lonely?  Do you need a friend?  Because I DO.  Inspired by *chatgpt* and *vtubers*, I attempt to create a virtual FRIEND on the browser.  I'll also be learning **C#** and **.NET** for the first time!  Below are pictures of the progress I'm making *(I sure hope my employers dont see this...)*
  <table><tr><tr>
             <td valign="bottom">
             <img src="./memories/model.gif" width="200"><br>
