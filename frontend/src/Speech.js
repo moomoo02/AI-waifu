@@ -65,6 +65,7 @@ require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
 
 var sdk = require("microsoft-cognitiveservices-speech-sdk");
 var readline = require("readline");
+const { useSyncExternalStore } = require("react");
 
 var audioFile = "YourAudioFile.wav";
 // This example requires environment variables named "SPEECH_KEY" and "SPEECH_REGION"
@@ -77,27 +78,71 @@ speechConfig.speechSynthesisVoiceName = "en-US-JennyNeural";
 // Create the speech synthesizer.
 var synthesizer = new sdk.SpeechSynthesizer(speechConfig, audioConfig);
 
-const text = "whats up I'm moomoo02";
 // Start the synthesizer and wait for a result.
 
-export const speak = (text) => {
+const speak = async (text, fn) => {
+  var byteData = 0;
+
   synthesizer.speakTextAsync(text,
     function (result) {
     if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
       console.log("synthesis finished.");
-      return result.audioData;
     } else {
       console.error("Speech synthesis canceled, " + result.errorDetails +
           "\nDid you set the speech resource key and region values?");
     }
+    
     synthesizer.close();
     synthesizer = null;
+
+    byteData = result.audioData;
+    fn(byteData);
     },
     function (err) {
       console.trace("err - " + err);
       synthesizer.close();
       synthesizer = null;
     });
-  console.log("Now synthesizing to: " + audioFile);
+
 
 };
+
+window.onload = init;
+function init() {
+  if (!window.AudioContext) {
+      if (!window.webkitAudioContext) {
+          alert("Your browser does not support any AudioContext and cannot play back this audio.");
+          return;
+      }
+          window.AudioContext = window.webkitAudioContext;
+      }
+  
+      context = new AudioContext();
+  }
+function playByteArray( buffer ) {
+
+  context.decodeAudioData(buffer, play);
+}
+
+function play( audioBuffer ) {
+  var source = context.createBufferSource();
+  source.buffer = audioBuffer;
+  source.connect( context.destination );
+  source.start(0);
+}
+
+const text = "whats up I'm moomoo02";
+
+const useTTS = async () => {
+  speak(text, function (byteData) {
+    console.log(byteData);
+    console.log(byteData.byteLength)
+    playByteArray(byteData);
+  });
+
+
+}
+init();
+useTTS();
+// playByteArray(bytes);
+
