@@ -12,8 +12,9 @@ let title = '# AI Waifu \n'
 let link = 'Current version (15% done): [AI-Waifu-Website](http://35.175.110.252:3000/) <br/> <br/> '
 let introduction = 'Are you lonely?  Do you need a friend?  Because I DO.  Inspired by *chatgpt* and *vtubers*, I attempt to create a virtual FRIEND on the browser.  I\'ll also be learning **C#** and **.NET** for the first time!  Below are pictures of the progress I\'m making *(I sure hope my employers dont see this...)*\n '
 let mdContent = title + link + introduction + '<table><tr>';
-let journal = fs.readFileSync('./Journal.md', 'utf8');
-let versionHistory = fs.readFileSync('./VersionHistory.md', 'utf8');
+let journal = fs.readFileSync('./markdowns/Journal.md', 'utf8');
+let versionHistory = fs.readFileSync('./markdowns/VersionHistory.md', 'utf8');
+let roadmap = fs.readFileSync('./markdowns/Roadmap.md', 'utf8');
 const getSortedFiles = async (dir) => {
     const files = await fs.promises.readdir(dir);
     
@@ -51,8 +52,10 @@ getSortedFiles(ROOT_DIR).then((result) => {
             </td>`;
         }
      });
-     mdContent += `</tr></table>\n`;
-     mdContent += versionHistory;
-     mdContent += journal;
-     fs.writeFileSync(path.join("./", README_FILENAME), mdContent);
+     
+    mdContent += `</tr></table>\n`;
+    //  mdContent += versionHistory;
+    mdContent += roadmap;
+    mdContent += journal;
+    fs.writeFileSync(path.join("./", README_FILENAME), mdContent);
 });
