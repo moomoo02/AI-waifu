@@ -10,11 +10,15 @@ import {
 import axios from 'axios';
 import { API_URL } from "./api";
 import ReactGA from "react-ga";
+import {useAudio} from "./Audio";
+import {useTTS} from "./Speech";
 
 axios.defaults.withCredentials = true;
 
 function Chat({setSpeak, setEmotion}) {
     const [messages, setMessages] = useState([]);
+    const [playing, toggle] = useAudio("audio/YourAudioFile.wav");
+
     const handleSend = async text => {
 
         //Render outgoing message on client
@@ -28,6 +32,7 @@ function Chat({setSpeak, setEmotion}) {
             setMessages((currentMessages) => ([...currentMessages, {direction: data.direction, content: data.content}]));
             setEmotion(data.emotion);
             setSpeak(true);
+            toggle();
             console.log(data.emotion);
           });
           

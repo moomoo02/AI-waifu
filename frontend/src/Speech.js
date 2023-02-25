@@ -1,84 +1,18 @@
+import env from "react-dotenv";
+
+console.log(env.SPEECH_KEY);
 var sdk = require("microsoft-cognitiveservices-speech-sdk");
-const path = require('path')
-require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
 
-// class Speech
-// {
-//   #synthesizer;
-//   audioFile = "YourAudioFile.wav";
-//   constructor(){
-
-//     // This example requires environment variables named "SPEECH_KEY" and "SPEECH_REGION"
-//     const speechConfig = sdk.SpeechConfig.fromSubscription(process.env.SPEECH_KEY, process.env.SPEECH_REGION);
-//     const audioConfig = sdk.AudioConfig.fromAudioFileOutput(this.audioFile);
-//     // The language of the voice that speaks.
-//     speechConfig.speechSynthesisVoiceName = "en-US-JennyNeural";
-
-//     // Create the speech synthesizer.
-//     this.synthesizer = new sdk.SpeechSynthesizer(speechConfig, audioConfig);
-//   }
-
-//   getSynthesizer(){
-//     return this.synthesizer;
-//   }
-
-//   speak(text){
-//     //Start the synthesizer and wait for a result.
-//     this.synthesizer.speakTextAsync(text,
-//       function (result) 
-//       {
-//         console.log("Bytes:" + result.audioData)
-//         if(result.reason === sdk.ResultReason.SynthesizingAudioStarted){
-//           console.log("Synthesis has begun");
-//         }else{
-//           console.log("Synthesis has not started");
-//         }
-
-//         if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
-//           console.log("synthesis finished.");
-//         } else {
-//           console.error("Speech synthesis canceled, " + result.errorDetails +
-//               "\nDid you set the speech resource key and region values?");
-//         }
-//         this.synthesizer.close();
-//         this.synthesizer = null;
-//       },
-//       function (err) 
-//       {
-//         console.trace("err - " + err);
-//         this.synthesizer.close();
-//         this.synthesizer = null;
-//       }
-//     );
-//     console.log("Now synthesizing to: " + this.audioFile);
-//   }
-
-
-// }
-
-// const text = "Hello";
-// const speech = new Speech();
-// speech.speak(text);
- 
-
-
-
-var sdk = require("microsoft-cognitiveservices-speech-sdk");
-var readline = require("readline");
-const { useSyncExternalStore } = require("react");
-
-var audioFile = "../public/audio/YourAudioFile.wav";
 // This example requires environment variables named "SPEECH_KEY" and "SPEECH_REGION"
-const speechConfig = sdk.SpeechConfig.fromSubscription(process.env.SPEECH_KEY, process.env.SPEECH_REGION);
-const audioConfig = sdk.AudioConfig.fromAudioFileOutput(audioFile);
+const speechConfig = sdk.SpeechConfig.fromSubscription(env.SPEECH_KEY, env.SPEECH_REGION);
 
 // The language of the voice that speaks.
 speechConfig.speechSynthesisVoiceName = "en-US-JennyNeural"; 
 
 // Create the speech synthesizer.
-var synthesizer = new sdk.SpeechSynthesizer(speechConfig, audioConfig);
+var synthesizer = new sdk.SpeechSynthesizer(speechConfig);
 
-// Start the synthesizer and wait for a result.
+//Start the synthesizer and wait for a result.
 
 const speak = async (text, fn) => {
   var byteData = 0;
@@ -107,27 +41,13 @@ const speak = async (text, fn) => {
 
 };
 
-function playByteArray( buffer ) {
-
-  //context.decodeAudioData(buffer, play);
-}
-
-function play( audioBuffer ) {
-  var source = context.createBufferSource();
-  source.buffer = audioBuffer;
-  source.connect( context.destination );
-  source.start(0);
-}
-
-const text = "whats up I'm moomoo02";
-
-const useTTS = async () => {
+export const useTTS = async (text) => {
   speak(text, function (byteData) {
     console.log(byteData);
     console.log(byteData.byteLength)
-    playByteArray(byteData);
   });
 }
-useTTS();
+
+// useTTS();
 // playByteArray(bytes);
 
