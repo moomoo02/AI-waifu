@@ -67,7 +67,7 @@ var sdk = require("microsoft-cognitiveservices-speech-sdk");
 var readline = require("readline");
 const { useSyncExternalStore } = require("react");
 
-var audioFile = "YourAudioFile.wav";
+var audioFile = "../public/audio/YourAudioFile.wav";
 // This example requires environment variables named "SPEECH_KEY" and "SPEECH_REGION"
 const speechConfig = sdk.SpeechConfig.fromSubscription(process.env.SPEECH_KEY, process.env.SPEECH_REGION);
 const audioConfig = sdk.AudioConfig.fromAudioFileOutput(audioFile);
@@ -107,21 +107,9 @@ const speak = async (text, fn) => {
 
 };
 
-window.onload = init;
-function init() {
-  if (!window.AudioContext) {
-      if (!window.webkitAudioContext) {
-          alert("Your browser does not support any AudioContext and cannot play back this audio.");
-          return;
-      }
-          window.AudioContext = window.webkitAudioContext;
-      }
-  
-      context = new AudioContext();
-  }
 function playByteArray( buffer ) {
 
-  context.decodeAudioData(buffer, play);
+  //context.decodeAudioData(buffer, play);
 }
 
 function play( audioBuffer ) {
@@ -139,10 +127,7 @@ const useTTS = async () => {
     console.log(byteData.byteLength)
     playByteArray(byteData);
   });
-
-
 }
-init();
 useTTS();
 // playByteArray(bytes);
 

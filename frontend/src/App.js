@@ -6,7 +6,7 @@ import React, {useState, useEffect, useRef} from 'react';
 import axios from 'axios';
 import Chat from './Chat'
 import { Button } from '@chatscope/chat-ui-kit-react';
-import {useAudio} from './Audio';
+import {Player} from './Audio';
 import ReactGA from "react-ga";
 
 const TRACKING_ID = "UA-252462541-1";
@@ -111,7 +111,8 @@ function App() {
  {/* .map((key,val) => <Button onClick={() => handleButton(key)}> Exp {val} </Button>)} */}
   <Button onClick={handleButtonMotion}> Motion 1 </Button>
   <Button onClick={handleSpeakMotion}> Motion 2 </Button>
-  <useAudio url={"./YourAudioFile.wav"}/>
+  Audio
+  <Player url={"audio/YourAudioFile.wav"}/>
   </div>
   
   );

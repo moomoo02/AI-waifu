@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const useAudio = url => {
+export const useAudio = url => {
   const [audio] = useState(new Audio(url));
   const [playing, setPlaying] = useState(false);
 
@@ -8,6 +8,9 @@ const useAudio = url => {
 
   useEffect(() => {
       playing ? audio.play() : audio.pause();
+      if(playing){
+        console.log("Playing " + url);
+      }
     },
     [playing]
   );
@@ -22,7 +25,7 @@ const useAudio = url => {
   return [playing, toggle];
 };
 
-const Player = ({ url }) => {
+export const Player = ({ url }) => {
   const [playing, toggle] = useAudio(url);
 
   return (
@@ -33,4 +36,3 @@ const Player = ({ url }) => {
   );
 };
 
-export default Player;
