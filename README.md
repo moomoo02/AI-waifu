@@ -36,7 +36,8 @@ Current version (15% done): [AI-Waifu-Website](http://35.175.110.252:3000/) <br/
 - [x] Implement Text to Text controller
 - [x] Dockerize application
 - [x] Deploy to cloud
-- [ ] Implement Text to Speech controller.
+- [x] Implement Text to Speech
+- [ ] Add minigame (rizz meter?)
 # Journal
 
 ## Feb 4

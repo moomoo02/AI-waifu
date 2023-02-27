@@ -5,4 +5,5 @@
 - [x] Implement Text to Text controller
 - [x] Dockerize application
 - [x] Deploy to cloud
-- [ ] Implement Text to Speech controller.
+- [x] Implement Text to Speech
+- [ ] Add minigame (rizz meter?)
