@@ -8,6 +8,7 @@ import Chat from './Chat'
 import { Button } from '@chatscope/chat-ui-kit-react';
 import {Player} from './Audio';
 import ReactGA from "react-ga";
+import { API_URL } from "./api";
 
 const TRACKING_ID = "UA-252462541-1";
 ReactGA.initialize(TRACKING_ID); 
@@ -26,6 +27,7 @@ function App() {
   const [scale, setScale] = useState(0.25);
   const [emotion, setEmotion] = useState("Neutral");
   const [speak, setSpeak] = useState(false);
+  const [audio, setAudio] = useState("");
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname);
@@ -97,6 +99,24 @@ function App() {
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
+
+  function loadAudio() {
+          //Recieve a response from backend
+          const requestUrl = API_URL + '/text-speech/' + "Hello";
+          axios.get(requestUrl).then((response) => {
+              var data = response.data;
+              let byteArray = data.data;
+              console.log(byteArray);
+              setAudio(byteArray);
+            });     
+  }
+  function playAudio() {
+    console.log(audio);
+    let fileString = "data:audio/wav;base64," + audio; 
+    var sound = new Audio(fileString); 
+    sound.play();
+    console.log(fileString + " played");
+  }
   return (
   <div class='app'>
 
@@ -111,7 +131,8 @@ function App() {
  {/* .map((key,val) => <Button onClick={() => handleButton(key)}> Exp {val} </Button>)} */}
   <Button onClick={handleButtonMotion}> Motion 1 </Button>
   <Button onClick={handleSpeakMotion}> Motion 2 </Button>
-  Audio
+  <Button onClick={loadAudio}> Load Audio</Button>
+  <Button onClick={playAudio}> Play Audio</Button>
   <Player url={"audio/YourAudioFile.wav"}/>
   </div>
   

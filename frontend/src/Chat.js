@@ -11,13 +11,20 @@ import axios from 'axios';
 import { API_URL } from "./api";
 import ReactGA from "react-ga";
 import {useAudio} from "./Audio";
-import {useTTS} from "./Speech";
 
 axios.defaults.withCredentials = true;
 
+
+function playAudio(byteArray) {
+  console.log(byteArray);
+  let fileString = "data:audio/wav;base64," + byteArray; 
+  var sound = new Audio(fileString); 
+  sound.play();
+  console.log(fileString + " played");
+}
+
 function Chat({setSpeak, setEmotion}) {
     const [messages, setMessages] = useState([]);
-    const [playing, toggle] = useAudio("audio/YourAudioFile.wav");
 
     const handleSend = async text => {
 
@@ -31,10 +38,16 @@ function Chat({setSpeak, setEmotion}) {
             var data = response.data;
             setMessages((currentMessages) => ([...currentMessages, {direction: data.direction, content: data.content}]));
             setEmotion(data.emotion);
-            setSpeak(true);
-            toggle();
             console.log(data.emotion);
+
+              //Recieve speech from backend
+            const requestUrl = API_URL + '/text-speech/' + data.content;
+            axios.get(requestUrl).then((response) => {
+              var data = response.data;
+              // playAudio(data.data);
+            });
           });
+          
           
 
           ReactGA.event({
