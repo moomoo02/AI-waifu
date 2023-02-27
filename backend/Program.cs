@@ -30,6 +30,11 @@ builder.Services.AddCors(options =>
                       });
 });
 
+//Load enviroment variables
+var root = Directory.GetCurrentDirectory();
+var dotenv = Path.Combine(root, ".env");
+YourApplication.DotEnv.Load(dotenv);
+
 // Add services to the container.
 BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
 builder.Services.AddSingleton<IChatRepository, MongoDbChatRepository>();

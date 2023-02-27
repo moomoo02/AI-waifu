@@ -15,7 +15,6 @@ namespace Backend.Controllers
         static private string SentinentAnalysisPrompt = backend.Prompts.SentinentAnalysisPrompt;
         public TextToTextController(OpenAIAPI openAiApi){
             this.api = openAiApi;
-            //Create a completion
         }
         //GET /text-text
         [HttpGet]

@@ -131,3 +131,5 @@
 /Users/moomoo02/Code/AI waifu/backend/obj/Debug/net6.0/backend.MvcApplicationPartsAssemblyInfo.cs
 /Users/moomoo02/Code/AI waifu/backend/obj/Debug/net6.0/backend.MvcApplicationPartsAssemblyInfo.cache
 /Users/moomoo02/Code/AI waifu/backend/obj/Debug/net6.0/backend.csproj.CopyComplete
+/Users/moomoo02/Code/AI waifu/backend/bin/Debug/net6.0/DotNetEnv.dll
+/Users/moomoo02/Code/AI waifu/backend/bin/Debug/net6.0/Sprache.dll

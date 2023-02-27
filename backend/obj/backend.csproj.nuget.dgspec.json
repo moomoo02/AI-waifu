@@ -42,6 +42,10 @@
               "target": "Package",
               "version": "[6.0.2, )"
             },
+            "DotNetEnv": {
+              "target": "Package",
+              "version": "[2.5.0, )"
+            },
             "Microsoft.CognitiveServices.Speech": {
               "target": "Package",
               "version": "[1.25.0, )"

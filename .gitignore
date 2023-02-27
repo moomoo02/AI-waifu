@@ -108,3 +108,4 @@ nodeBackend/
 backend/.openai
 backend/Prompts/*.txt
 frontend/.env
+backend/.env
