@@ -38,6 +38,7 @@ function Chat({setSpeak, setEmotion}) {
             var data = response.data;
             setMessages((currentMessages) => ([...currentMessages, {direction: data.direction, content: data.content}]));
             setEmotion(data.emotion);
+            setSpeak(true);
             console.log(data.emotion);
 
               //Recieve speech from backend
