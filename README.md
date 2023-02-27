@@ -81,3 +81,6 @@ Current version (15% done): [AI-Waifu-Website](http://35.175.110.252:3000/) <br/
 
 ## Feb 20
 * Holy cow I was so dead after my trip that I didn't do anything for a few days.  I was OUT.  Today, I decided to be productive so I learned about model rigging and animations in Live2d and was able to create a few nice speaking animations.  It was so freaking hard, and I'm in utter awe at people who rig vtuber models... You guys are crazy.
+
+## Feb 26
+* I finally got Azure TTS working in the backend so now you can hear her voice in your speaker!!! Well, not just yet since I still haven't deployed it on AWS.  I struggled alot on figuring out how to play audio from a byte array onto the browser using javascript, but it turned out to be really easy.  You just append a certain prefix to the byte array.

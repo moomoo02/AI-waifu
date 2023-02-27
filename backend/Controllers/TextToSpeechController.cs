@@ -2,6 +2,7 @@ using System.Diagnostics;
 using backend.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CognitiveServices.Speech;
+using Microsoft.CognitiveServices.Speech.Audio;
 using OpenAI_API;
 using OpenAI_API.Completions;
 
@@ -12,22 +13,27 @@ namespace Backend.Controllers
     public class TextToSpeechController : ControllerBase
     {
         static private SpeechConfig speechConfig;
+        static private AudioConfig audioConfig;
         public TextToSpeechController(){
             // The language of the voice that speaks.
             DotNetEnv.Env.Load();
             string speechKey = Environment.GetEnvironmentVariable("SPEECH_KEY");
             string speechRegion = Environment.GetEnvironmentVariable("SPEECH_REGION");
+
             TextToSpeechController.speechConfig = SpeechConfig.FromSubscription(speechKey, speechRegion);
             TextToSpeechController.speechConfig.SpeechSynthesisVoiceName = "en-US-JennyNeural"; 
+            
+            TextToSpeechController.audioConfig =  AudioConfig.FromDefaultSpeakerOutput(); 
+
         }
         //GET /text-speech/prompt
         [HttpGet("{text}")]
         public async Task<ActionResult<SpeechDto>> GetSpeech(String text)
         {
-            using (var speechSynthesizer = new SpeechSynthesizer(speechConfig))
+            using (var speechSynthesizer = new SpeechSynthesizer(speechConfig, audioConfig))
             {
                 var speechSynthesisResult = await speechSynthesizer.SpeakTextAsync(text);
-                
+
                 return OutputSpeechSynthesisResult(speechSynthesisResult, text);
             }
         }
